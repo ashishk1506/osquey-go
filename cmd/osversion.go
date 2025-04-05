@@ -7,7 +7,7 @@ import (
 	"osquey/model"
 )
 
-func ExecOsVersion() string {
+func ExecOsVersion() model.OsVersion {
 	cmd := exec.Command("osqueryi", "--json", "SELECT version FROM os_version LIMIT 1;")
 
 	output, err := cmd.CombinedOutput()
@@ -23,8 +23,8 @@ func ExecOsVersion() string {
 	}
 
 	if len(verObj) >= 1 {
-		return verObj[0].Version
+		return verObj[0]
 	}
 
-	return ""
+	return model.OsVersion{}
 }

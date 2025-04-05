@@ -22,7 +22,7 @@ func (p *ProgramList) ClearTable() {
 	log.Infof("Number of records deleted: %d\n", count)
 }
 
-func (p *ProgramList) GetProgramList(data []ProgramList) {
+func (p *ProgramList) StoreProgramList(data []ProgramList) {
 	orm := orm.NewOrm()
 	count, err := orm.InsertMulti(len(data), data)
 	if err != nil {
