@@ -11,8 +11,10 @@ func main() {
 	db.DB()
 	//resp := cmd.ExecOsQueryVersion()
 	//fmt.Println(resp)
-	resp1 := cmd.ExecOsVersion()
-	fmt.Println(resp1)
+	//resp1 := cmd.ExecOsVersion()
+	//fmt.Println(resp1)
+	resp2 := cmd.ExecProgramList()
+	fmt.Println(resp2)
 	// os version
 
 }

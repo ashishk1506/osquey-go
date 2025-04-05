@@ -4,11 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"os/exec"
+	"osquey/model"
 )
-
-type OsVersion struct {
-	Version string `json:"version"`
-}
 
 func ExecOsVersion() string {
 	cmd := exec.Command("osqueryi", "--json", "SELECT version FROM os_version LIMIT 1;")
@@ -18,7 +15,7 @@ func ExecOsVersion() string {
 		log.Fatalf("Error running osqueryi: %v\n", err)
 	}
 
-	var verObj []OsVersion
+	var verObj []model.OsVersion
 
 	err = json.Unmarshal(output, &verObj)
 	if err != nil {
