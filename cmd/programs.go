@@ -25,7 +25,3 @@ func ExecProgramList() []model.ProgramList {
 	return programList
 
 }
-
-func StoreProgramList() {
-
-}
