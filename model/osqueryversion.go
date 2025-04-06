@@ -39,6 +39,7 @@ func (p *OsQueryVersion) StoreOsQueryVersion() {
 func (p *OsQueryVersion) LoadOsQueryVersion() {
 	orm := orm.NewOrm()
 	//OsQueryObj := new(OsQueryVersion)
+	p.Id = 1
 	err := orm.Read(p)
 	if err != nil {
 		log.Error("Error reading osquery insert: %v", err)

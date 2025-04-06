@@ -32,10 +32,11 @@ func (p *ProgramList) StoreProgramList(data []ProgramList) {
 
 }
 
-func (p *ProgramList) LoadProgramList(readList []ProgramList) {
+func (p *ProgramList) LoadProgramList(readList *[]ProgramList) {
 	orm := orm.NewOrm()
-	err := orm.Read(readList)
+	count, err := orm.QueryTable(new(ProgramList)).All(readList)
 	if err != nil {
 		log.Error("Error reading programlist: %v", err)
 	}
+	log.Infof("Number of records read: %d\n", count)
 }

@@ -38,6 +38,7 @@ func (p *OsVersion) StoreOsVersion() {
 
 func (p *OsVersion) LoadOsVersion() {
 	orm := orm.NewOrm()
+	p.Id = 1
 	err := orm.Read(p)
 	if err != nil {
 		log.Error("Error reading osquery insert: %v", err)
