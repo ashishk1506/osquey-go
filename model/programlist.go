@@ -31,3 +31,11 @@ func (p *ProgramList) StoreProgramList(data []ProgramList) {
 	log.Infof("Number of records inserted: %d\n", count)
 
 }
+
+func (p *ProgramList) LoadProgramList(readList []ProgramList) {
+	orm := orm.NewOrm()
+	err := orm.Read(readList)
+	if err != nil {
+		log.Error("Error reading programlist: %v", err)
+	}
+}

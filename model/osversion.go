@@ -16,7 +16,7 @@ func (p *OsVersion) TableName() string {
 
 func (p *OsVersion) ClearTable() {
 	orm := orm.NewOrm()
-	count, err := orm.Raw("TRUNCATE TABLE ?", p.TableName()).Exec()
+	count, err := orm.Raw("TRUNCATE TABLE " + "os_version").Exec()
 	if err != nil {
 		log.Error("Error clearing table:%v", err)
 	}
@@ -34,4 +34,12 @@ func (p *OsVersion) StoreOsVersion() {
 	}
 	log.Infof("Number of records inserted: %d\n", count)
 
+}
+
+func (p *OsVersion) LoadOsVersion() {
+	orm := orm.NewOrm()
+	err := orm.Read(p)
+	if err != nil {
+		log.Error("Error reading osquery insert: %v", err)
+	}
 }
