@@ -48,7 +48,6 @@ Before running this project, ensure you have the following:
    DB_HOSTNAME=
    DB_NAME=
    DB_PORT=
-  ```
 
 4. **start server**:
 
