@@ -1,6 +1,6 @@
 # Osquey-Go Project
 
-This project is a simple web application built with Go (Golang) that serves as a backend server. It integrates with a MySQL Docker container and provides a static HTML interface.
+This project is a application which returns os-query info, built with Go (Golang) that serves as a backend server. It integrates with a MySQL Docker container and provides a static HTML interface.
 
 ## Features
 
