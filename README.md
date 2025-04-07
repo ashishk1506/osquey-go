@@ -4,8 +4,8 @@ This project is a simple web application built with Go (Golang) that serves as a
 
 ## Features
 
-- **Backend**: Golang server
-- **Database**: MySQL running in a Docker container
+- **Backend**: Golang server :8081
+- **Database**: MySQL running in a Docker container 3310:3306
 - **Frontend**: Static HTML page for displaying data
 - **Endpoint**: `/latest_data`
 
@@ -36,14 +36,24 @@ Before running this project, ensure you have the following:
 2. **start sql container**:
 
   ```
-  docker-compose up -d
-  ```
-
-
-3. **start server container**:
-
-  ```
+  cd server
   docker-compose up
+  ```
+
+3. **create .env file**:
+
+   ```env
+   DB_USERNAME=
+   DB_PASSWORD=
+   DB_HOSTNAME=
+   DB_NAME=
+   DB_PORT=
+  ```
+
+4. **start server**:
+
+  ```
+  go run main.go
   ```
 
 
